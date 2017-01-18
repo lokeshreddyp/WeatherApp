@@ -21,8 +21,10 @@ let Longitude  = "&lon="
 let App_Id = "&appid="
 let Key = "5db4c88ea8062302acdf2b9118cb4ebe"
 
-let URL = "\(Base_URL)\(Latitude)35\(Longitude)139\(App_Id)\(Key)"
+let URL = "\(Base_URL)\(Latitude)34.075375\(Longitude)-84.294090\(App_Id)\(Key)"
 
 //TYPE ALIAS USAGE
 typealias  😂 = String
 let 😝:😂 = "welcome world"
+
+let ForecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=34.075375&lon=-84.294090&cnt=10&mode=json&appid=5db4c88ea8062302acdf2b9118cb4ebe"

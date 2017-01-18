@@ -25,34 +25,69 @@ class WeatherVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
     
     var currentweather:CurrentWeather!
-    
-    
+    var forecast:Forecast!
+    var forecasts = [Forecast]()
     override func viewDidLoad() {
         
     currentweather    = CurrentWeather()
+   // forecast = Forecast(newDict)
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         print(URL)
         print(😝)
        
+      
         currentweather.weatherapicall {
-            print("got here third")
-             self.jsondata()
-        }
-        
+            //print("got here third")
+            self.forecastapicall{
+            self.jsondata()
+            }
+     }
     }
-
+    
+    func forecastapicall(completed : @escaping DownloadComplete){
+        Alamofire.request(ForecastURL).responseJSON
+            {
+                response in
+                let result = response.result
+                
+                if let dict = result.value as? Dictionary<String,AnyObject> {
+                    if let list = dict["list"] as? [Dictionary<String,AnyObject>]
+                    {
+                        for obj in list {
+                            let forecast  = Forecast(newDict: obj)
+                            self.forecasts.append(forecast)
+                            print(obj)
+                        }
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+                
+          completed()
+                
+                
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return forecasts.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell{
+            let Forecasttabledata = forecasts[indexPath.row]
+            cell.configurecell(forcastapi_table: Forecasttabledata)
+            return cell
+        }
+        else {
+            return WeatherCell()
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

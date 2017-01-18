@@ -62,7 +62,8 @@ class CurrentWeather {
     func weatherapicall(completed :  @escaping DownloadComplete) {
         
        // let currentweatherurl = URL(String:URL)!
-        Alamofire.request(URL).responseJSON  {
+        Alamofire.request(URL).responseJSON
+            {
             response in
             let result = response.result
             print(response)
@@ -91,10 +92,12 @@ class CurrentWeather {
                     }
                 }
             }
-            
-            completed()
-                 }
+        // print("got first here")
+        completed()
+        }
         
+        //print("got second here")
+        //completed()
     }
     
     
