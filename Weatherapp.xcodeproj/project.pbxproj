@@ -18,6 +18,7 @@
 		A858C9961E240F5300E82DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A858C9941E240F5300E82DF4 /* LaunchScreen.storyboard */; };
 		A858C9A11E240F5300E82DF4 /* WeatherappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A858C9A01E240F5300E82DF4 /* WeatherappTests.swift */; };
 		A858C9AC1E240F5300E82DF4 /* WeatherappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A858C9AB1E240F5300E82DF4 /* WeatherappUITests.swift */; };
+		A858D4441E3126D90080E658 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A858D4431E3126D90080E658 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		A858C9AB1E240F5300E82DF4 /* WeatherappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherappUITests.swift; sourceTree = "<group>"; };
 		A858C9AD1E240F5300E82DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A858C9B91E2416DE00E82DF4 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		A858D4431E3126D90080E658 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				A84BAACC1E2536420033D0DE /* CurrentWeather.swift */,
 				A80AF37D1E2FC8E500AFE649 /* Forecast.swift */,
 				A80AF3871E30005F00AFE649 /* WeatherCell.swift */,
+				A858D4431E3126D90080E658 /* Location.swift */,
 			);
 			path = Weatherapp;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				A84BAACD1E2536420033D0DE /* CurrentWeather.swift in Sources */,
 				A84BAAC41E252FAC0033D0DE /* Constants.swift in Sources */,
 				A80AF37E1E2FC8E500AFE649 /* Forecast.swift in Sources */,
+				A858D4441E3126D90080E658 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
